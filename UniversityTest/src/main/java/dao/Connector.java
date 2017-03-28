@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import bean.Student;
+
 public class Connector {
 
 	private  static EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
@@ -65,6 +67,27 @@ public class Connector {
 		}finally {
 		}
 	}
+	
+	public void removeStudentById(long id)
+	{
+
+		try
+		{
+			Connector.em.getTransaction().begin();
+		
+			Student stu = em.find(Student.class, id);
+			Connector.em.remove(stu);
+
+			Connector.em.getTransaction().commit();
+		}
+		catch (Exception e) {
+			if (Connector.em != null)
+				Connector.em.getTransaction().rollback();
+			e.printStackTrace();
+		}finally {
+		}
+	}
+	
 	public <T> T getElementById(Class<T> classType, long id)
 	{
 		T ret = null;

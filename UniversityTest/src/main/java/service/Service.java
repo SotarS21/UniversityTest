@@ -27,11 +27,6 @@ public class Service implements Iservice {
 
 	}
 
-	@Override
-	public void deleteStudentInBD(Student student) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public List<Student> listOfStudent() {
@@ -43,6 +38,12 @@ public class Service implements Iservice {
 	public Student haveStudentById(long idStudent) {
 		
 		return dao.haveStudentById(idStudent);
+	}
+
+	@Override
+	public void deleteStudentById(long id) {
+		dao.deleteStudentById(id);
+		
 	}
 
 }
