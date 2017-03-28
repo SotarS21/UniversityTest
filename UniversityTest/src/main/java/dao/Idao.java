@@ -12,7 +12,7 @@ public interface Idao {
 	
 	public void deleteStudentInBD(Student student);
 	
-	public List<Student> listOfStudent(Student student);
+	public List<Student> listOfStudent();
 	
 	public Student haveStudentById(long idStudent);
 }

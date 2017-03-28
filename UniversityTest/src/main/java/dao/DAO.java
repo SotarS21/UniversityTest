@@ -3,6 +3,7 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -11,6 +12,7 @@ import javax.persistence.TypedQuery;
 
 import bean.Student;
 
+@Named
 public class DAO implements Idao {
 
 	@Override
@@ -31,7 +33,7 @@ public class DAO implements Idao {
 	}
 
 	@Override
-	public List<Student> listOfStudent(Student student) {
+	public List<Student> listOfStudent() {
 		List<Student> listStudent = new ArrayList<>();
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("my-pu");
 		EntityManager em = entityManagerFactory.createEntityManager();
