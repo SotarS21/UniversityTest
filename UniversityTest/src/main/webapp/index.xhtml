@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
 <body>
 
+	<h1>
+		<h:outputText value="#{messages['accueil.welcome']}" />
+	</h1>
+	<ui:debug/>
+		<h:form>
+			<h:outputText value="#{messages['accueil.alreadyMembre']}" /> : <h:commandLink
+				action="login" value="#{messages['accueil.login']}" />
+			<br />
+			<br />
+			<h:outputText value="#{messages['accueil.notAlreadyMembre']}" />
+			<h:commandLink action="inscription"
+				value="#{messages['accueil.createMembre']}" />
+			<br />
+			<h:commandButton value="French"
+				action="#{languageController.changeLanguage('fr')}"></h:commandButton>
+			<h:commandButton value="English"
+				action="#{languageController.changeLanguage('en')}"></h:commandButton>
+
+		</h:form>
 </body>
 </html>
