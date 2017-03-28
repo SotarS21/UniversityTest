@@ -27,8 +27,8 @@ public class DAO implements Idao {
 	}
 
 	@Override
-	public void deleteStudentInBD(Student student) {
-		Connector.getInstance().removeObject(student);
+	public void deleteStudentById(long id) {
+		Connector.getInstance().removeStudentById(id);
 		
 	}
 
