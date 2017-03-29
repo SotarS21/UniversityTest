@@ -1,5 +1,6 @@
 package service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,7 +11,7 @@ import bean.Student;
 import dao.Idao;
 
 @Named
-public class Service implements Iservice {
+public class Service implements Iservice , Serializable{
 	
 	@Inject
 	private Idao dao;

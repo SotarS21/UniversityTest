@@ -41,7 +41,7 @@ public class DAO implements Idao {
 		
 		transaction.begin();
 		
-		TypedQuery<Student> query = em.createQuery("select from student", Student.class);
+		TypedQuery<Student> query = em.createQuery("SELECT * from Student", Student.class);
 		
 		listStudent = query.getResultList();
 		

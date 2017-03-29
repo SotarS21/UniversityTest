@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head></h:head>
+<h:body>
+
+	<h1>
+		<h:outputText value="Univerité test" />
+	</h1>
+	<ui:debug />
+	<h:form>
+		<h:outputText value="Entrer les donné d'un étudiant" /> :
+			
+			<br />
+		<br />
+		
+		<h:panelGrid columns="3">
+			<h:outputText value="Nom : " />
+			<h:inputText value="#{student.lastName}" required="true" id="name"/>
+			
+			
+			<h:outputText value="Prenom : " />
+			<h:inputText value="#{student.firstName}" required="true" id="name"/>
+			
+			
+			<h:outputText value="Mail : " />
+			<h:inputText value="#{student.email}" required="true" id="name"/>
+			
+			<h:commandButton value="Valider" ></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
